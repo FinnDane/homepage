@@ -1,0 +1,20 @@
+kind: pipeline
+type: docker
+name: image
+
+steps:
+  - name: build
+    image: plugins/docker
+    settings:
+      registry: registry.finndane.nl
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+      repo: registry.finndane.nl/finn-dane/homepage
+      tags:
+        - latest
+
+trigger:
+  branch:
+    - master
