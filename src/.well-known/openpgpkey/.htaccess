@@ -1,0 +1,4 @@
+<Directory "hu">
+	Options -Indexes
+	DefaultType application/octet-stream
+</Directory>
